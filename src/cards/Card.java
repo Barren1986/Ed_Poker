@@ -3,7 +3,7 @@
 package cards;
 
 // This are all the attributes of the Card class
-public abstract class Card {
+public class Card {
 	protected int cardNumber;
 	private String suit;
 	private int suitIndex;
