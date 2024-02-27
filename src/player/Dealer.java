@@ -1,6 +1,7 @@
 package player;
 
 import cards.Card;
+import cards.StandardCard;
 import deck.Deck;
 import hand.Hand;
 
@@ -50,7 +51,7 @@ public class Dealer extends Player{
 	
 	public void takeUsedCard(Player player, int index) {
 		Card card = player.getHand().getCard(index);
-		deck.addUsedCards(card);
+		deck.addUsedCards((StandardCard) card);
 	}
 
 	public Deck getDeck() {

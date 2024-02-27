@@ -1,9 +1,11 @@
 package hand;
 
-import java.util.ArrayList;
 import cards.Card;
-import helpers.PokerSolver;
+import cards.StandardCard;
 import deck.Deck;
+import helpers.PokerSolver;
+
+import java.util.ArrayList;
 
 public class Hand {
 	private final ArrayList<Card> cards;
@@ -54,7 +56,8 @@ public class Hand {
 	private String[] getHandString() {
 		String[] handString = new String[cards.size()]; 
 		for(int i=0; i<cards.size(); i++) {
-			handString[i] = cards.get(i).getFace() + cards.get(i).getSuit();
+			handString[i] = cards.get(i).getFace() + ((StandardCard)cards.get(i)).getSuit();
+			//Cast Card object to a Standard Card
 		}
 
 		return handString;
@@ -98,7 +101,7 @@ public class Hand {
 		Card tempCard = cards.remove(index);
 		
 		//Send the card to the deck using the Deck class' addDiscard method 
-		deck.addUsedCards(tempCard);
+		deck.addUsedCards((StandardCard) tempCard);
 	}
 	
 	public void discardAll(Deck deck) {
@@ -109,7 +112,7 @@ public class Hand {
 			Card tempCard = cards.remove(0);
 					
 			//Send the card to the deck using the Deck class' addDiscard method 
-			deck.addUsedCards(tempCard);
+			deck.addUsedCards((StandardCard) tempCard);
 		}
 	}
 	

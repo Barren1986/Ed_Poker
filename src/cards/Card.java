@@ -2,16 +2,15 @@
 
 package cards;
 
-// This are all the attributes of the Card class
-public class Card {
+
+public abstract class Card {
+
+	// This is all the attributes of the Card class
 	protected int cardNumber;
 	private String suit;
-	private int suitIndex;
 	protected String color;
-	private int cardRank;
 	protected String face;
 	protected String cardImage;
-	private static int cardsCreated;
 	
 //These are the methods that will be the actions(behavior) of the Card class	
 	public Card(int cardNumber) {
@@ -19,15 +18,13 @@ public class Card {
 		createCard();
 	}
 
-//This method is used to create the cards in the deck
-	protected void createCard() {
-		this.suitIndex = (cardNumber - 1) / 13;
-		this.cardRank = ((cardNumber - 1) % 13) + 1; //Makes it so that the cardNumber starts at 1 and that it will make the rank 1 to 13.
-		setSuit();
-		setRank();
-		cardNumber++; //Increases cardNumber by 1
-	}
-	
+	// Constructor
+	//public abstract Card(String suit);
+
+	//This method is used to create the cards in the deck
+	protected abstract void createCard();
+
+	/*
 	private void setSuit() {
 		switch (suitIndex) {
 		case 0:
@@ -77,75 +74,75 @@ public class Card {
 			this.face = "K";
 				break;
 	}
-}
+} */
 
-	public String toString() {
-		return face + suit;
-	}
+	//public String toString() {
+	//	return face + suit;
+	//}
 
 	public int getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(int cardNumber) {
-		this.cardNumber = cardNumber;
-	}
+	//public void setCardNumber(int cardNumber) {
+	//	this.cardNumber = cardNumber;
+	//}
 
-	public String getSuit() {
-		return suit;
-	}
+	//public String getSuit() {
+	//	return suit;
+	//}
 
-	public void setSuit(String suit) {
-		this.suit = suit;
-	}
+	//public void setSuit(String suit) {
+	//	this.suit = suit;
+	//}
 
-	public int getSuitIndex() {
-		return suitIndex;
-	}
+	//public int getSuitIndex() {
+	//	return suitIndex;
+	//}
 
-	public void setSuitIndex(int suitIndex) {
-		this.suitIndex = suitIndex;
-	}
+	//public void setSuitIndex(int suitIndex) {
+	//	this.suitIndex = suitIndex;
+	//}
 
 	public String getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
-	}
+	//public void setColor(String color) {
+	//	this.color = color;
+	//}
 
-	public int getCardRank() {
-		return cardRank;
-	}
+	//public int getCardRank() {
+	//	return cardRank;
+	//}
 
-	public void setCardRank(int cardRank) {
-		this.cardRank = cardRank;
-	}
+	//public void setCardRank(int cardRank) {
+	//	this.cardRank = cardRank;
+	//}
 
 	public String getFace() {
 		return face;
 	}
 
-	public void setFace(String face) {
-		this.face = face;
-	}
+	//public void setFace(String face) {
+	//	this.face = face;
+	//}
 
 	public String getCardImage() {
 		return cardImage;
 	}
 
-	public void setCardImage(String cardImage) {
-		this.cardImage = cardImage;
-	}
+	//public void setCardImage(String cardImage) {
+	//	this.cardImage = cardImage;
+	//}
 
-	public static int getCardsCreated() {
-		return cardsCreated;
-	}
+	//public static int getCardsCreated() {
+	//	return cardsCreated;
+	//}
 
-	public static void setCardsCreated(int cardsCreated) {
-		Card.cardsCreated = cardsCreated;
-	}
+	//public static void setCardsCreated(int cardsCreated) {
+	//	Card.cardsCreated = cardsCreated;
+	//}
 }
 
 
